@@ -111,5 +111,8 @@
   <ItemGroup>
     <Folder Include="prueba\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="este.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
