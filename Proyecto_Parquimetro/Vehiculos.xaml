@@ -22,7 +22,7 @@
         <Button Height="35"  FontFamily="Robotol" FontSize="23"   Content="Ingreso" Margin="25,175,677,322" Name="btn_entrada" Grid.Row="1"/>
         
         <StackPanel Margin="426,0,5,0" Grid.Row="1" Grid.Column="0" Background="#64b5f6" />
-        <Button Height="35"  FontFamily="Roboto" FontSize="23"   Content="Manual" Margin="448,338,218,159" Name="btn_salida" Grid.Row="1"/>
+        <Button Height="35"  FontFamily="Roboto" FontSize="23"   Content="Salida" Margin="448,338,218,159" Name="btn_salida" Grid.Row="1"/>
         <ListBox Name="lbAnimalesZoologico" Grid.Row="1" Margin="448,10,30,222" Background="White"/>
         <TextBox Background="White" Margin="596,390,218,93" Grid.Row="1" />
         <Label  FontFamily="Roboto" FontSize="23" Margin="495,413,409,74" Grid.Row="1" Content="Cobro" />
