@@ -10,30 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Proyecto_Parquimetro
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para Window1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Vehiculos : Window
     {
-        public MainWindow()
+        public Vehiculos()
         {
             InitializeComponent();
         }
 
-
-        private void Btn_vehiculo_Click(object sender, RoutedEventArgs e)
+        private void TextFieldAssist_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
-            Vehiculos ingreso = new Vehiculos();
-            MainWindow principal = new MainWindow();
-            ingreso.Show();
-            principal.Close();
+
         }
-
-
     }
 }

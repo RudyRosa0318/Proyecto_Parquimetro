@@ -1,0 +1,30 @@
+﻿<Window x:Class="Proyecto_Parquimetro.Vehiculos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Proyecto_Parquimetro"
+        mc:Ignorable="d"
+        Title="Window1" Height="612" Width="1070">
+    <Grid Background="#2286c3 ">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="50"  />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:PackIcon Kind="SmileyHappy" materialDesign:ColorZoneAssist.Mode="Light" HorizontalAlignment="Right" Height="50" Width="94" Margin="0,0,-15,0"/>
+        <Label Foreground="White" FontStyle="Italic" FontFamily="Rubik" HorizontalAlignment="Center" Grid.Row="0" FontSize="30" FontWeight="Bold"  Width="240" Margin="10,10,812,522" Grid.RowSpan="2"  >Vehículos</Label>
+        <StackPanel Grid.Row="1" Grid.Column="0" Background="#9be7ff" HorizontalAlignment="Left" Width="415"/>
+        <Label  FontFamily="Roboto" FontSize="23" Margin="25,59,879,428" Grid.Row="1" >Placa Vehículo</Label>
+        <Label  FontFamily="Roboto" FontSize="23" Margin="25,117,879,362" Grid.Row="1" FontWeight="Bold"  >Tipo Vehículo</Label>
+        <ComboBox Background="White" Margin="188,107,677,389" Grid.Row="1" Height="36"></ComboBox>
+        <TextBox Background="White" Margin="188,36,677,447" Grid.Row="1" />
+        <Button Height="35"  FontFamily="Robotol" FontSize="23"   Content="Ingreso" Margin="25,175,677,322" Name="btn_entrada" Grid.Row="1"/>
+        
+        <StackPanel Margin="426,0,5,0" Grid.Row="1" Grid.Column="0" Background="#64b5f6" />
+        <Button Height="35"  FontFamily="Roboto" FontSize="23"   Content="Manual" Margin="448,338,218,159" Name="btn_salida" Grid.Row="1"/>
+        <ListBox Name="lbAnimalesZoologico" Grid.Row="1" Margin="448,10,30,222" Background="White"/>
+        <TextBox Background="White" Margin="596,390,218,93" Grid.Row="1" />
+        <Label  FontFamily="Roboto" FontSize="23" Margin="495,413,409,74" Grid.Row="1" Content="Cobro" />
+    </Grid>
+</Window>
