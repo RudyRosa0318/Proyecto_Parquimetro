@@ -12,6 +12,7 @@ BEGIN
 END
 GO
 
+
 CREATE DATABASE Estacionamiento
 GO
 
@@ -26,8 +27,7 @@ CREATE TABLE Parqueo.Vehiculo
 	Num_Placa NVARCHAR(7) NOT NULL
 	CONSTRAINT PK_Vehiculo_Num_Placa PRIMARY KEY CLUSTERED,
 	Hora_Ingreso TIME DEFAULT GETDATE() NOT NULL,
-	Hora_Salida TIME,
-	Tipo_Vehiculo INT NOT NULL
+	IdTipo_Vehiculo INT NOT NULL
 )
 GO
 
@@ -43,15 +43,18 @@ CREATE TABLE Parqueo.Cobro
 (
 	Id INT IDENTITY (1,1) NOT NULL
 	CONSTRAINT PK_Cobro_Id PRIMARY KEY CLUSTERED,
+	Hora_Salida TIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	Monto MONEY NOT NULL
 )
 GO
 
+
 ALTER TABLE Parqueo.Vehiculo
-	ADD CONSTRAINT FK_Vehiculo_Tipo_Vehiculo$Tipo_Vehiculo_Id
-	FOREIGN KEY (Tipo_Vehiculo) REFERENCES Tipo_Vehiculo(Id)
-	ON UPDATE NO ACTION
-	ON DELETE NO ACTION
+	ADD CONSTRAINT
+		FK_Parqueo_Vehiculo$TieneUn$Parqueo_Tipo_id					
+		FOREIGN KEY (IdTipo_Vehiculo) REFERENCES Parqueo.Tipo_Vehiculo(Id)
+		ON UPDATE CASCADE
+		ON DELETE NO ACTION
 GO
 
 INSERT INTO Parqueo.Tipo_Vehiculo(Tipo)
@@ -63,9 +66,23 @@ GO
 SELECT * FROM Parqueo.Tipo_Vehiculo
 GO
 
-INSERT INTO Parqueo.Vehiculo(Num_Placa,Tipo_Vehiculo)
-VALUES ('HND1234',12)
+INSERT INTO Parqueo.Vehiculo(Num_Placa,IdTipo_Vehiculo)
+VALUES ('HND1234',1),
+	   ('HON3214',2),
+	   ('HNS3215',3)
 GO
 
-SELECT * FROM Parqueo.Vehiculo
+SELECT * FROM Parqueo.Cobro
 GO
+
+/*UPDATE Parqueo.Tipo_Vehiculo 
+Set Tipo = 'Especial'
+Where id = 3
+go*/
+
+INSERT INTO Parqueo.Cobro (Monto)
+VALUES (30.50),
+	   (36.50),
+	   (56.89)	
+GO
+
