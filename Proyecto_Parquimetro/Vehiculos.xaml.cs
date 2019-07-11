@@ -28,5 +28,13 @@ namespace Proyecto_Parquimetro
         {
 
         }
+
+        private void Btnregresar_Click(object sender, RoutedEventArgs e)
+        {
+            
+            MainWindow principal = new MainWindow();
+            principal.Show();
+            this.Close();
+        }
     }
 }

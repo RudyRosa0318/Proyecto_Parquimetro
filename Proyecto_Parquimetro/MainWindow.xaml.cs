@@ -29,11 +29,13 @@ namespace Proyecto_Parquimetro
         private void Btn_vehiculo_Click(object sender, RoutedEventArgs e)
         {
             Vehiculos ingreso = new Vehiculos();
-            MainWindow principal = new MainWindow();
             ingreso.Show();
-            principal.Close();
+            this.Close();
         }
 
-
+        private void Btnapagar_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

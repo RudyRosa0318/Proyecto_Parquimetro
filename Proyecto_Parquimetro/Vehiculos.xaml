@@ -6,25 +6,36 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Proyecto_Parquimetro"
         mc:Ignorable="d"
-        Title="Window1" Height="612" Width="1070">
-    <Grid Background="#2286c3 ">
+        Title="Window1" Height="612" Width="1070" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#7c8500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="596*"/>
+            <ColumnDefinition Width="343*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions >
-            <RowDefinition Height="50"  />
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"  />
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <materialDesign:PackIcon Kind="SmileyHappy" materialDesign:ColorZoneAssist.Mode="Light" HorizontalAlignment="Right" Height="50" Width="94" Margin="0,0,-15,0"/>
-        <Label Foreground="White" FontStyle="Italic" FontFamily="Rubik" HorizontalAlignment="Center" Grid.Row="0" FontSize="30" FontWeight="Bold"  Width="240" Margin="10,10,812,522" Grid.RowSpan="2"  >Vehículos</Label>
-        <StackPanel Grid.Row="1" Grid.Column="0" Background="#9be7ff" HorizontalAlignment="Left" Width="415"/>
-        <Label  FontFamily="Roboto" FontSize="23" Margin="25,59,879,428" Grid.Row="1" >Placa Vehículo</Label>
-        <Label  FontFamily="Roboto" FontSize="23" Margin="25,117,879,362" Grid.Row="1" FontWeight="Bold"  >Tipo Vehículo</Label>
-        <ComboBox Background="White" Margin="188,107,677,389" Grid.Row="1" Height="36"></ComboBox>
-        <TextBox Background="White" Margin="188,36,677,447" Grid.Row="1" />
-        <Button Height="35"  FontFamily="Robotol" FontSize="23"   Content="Ingreso" Margin="25,175,677,322" Name="btn_entrada" Grid.Row="1"/>
-        
-        <StackPanel Margin="426,0,5,0" Grid.Row="1" Grid.Column="0" Background="#64b5f6" />
-        <Button Height="35"  FontFamily="Roboto" FontSize="23"   Content="Salida" Margin="448,338,218,159" Name="btn_salida" Grid.Row="1"/>
-        <ListBox Name="lbAnimalesZoologico" Grid.Row="1" Margin="448,10,30,222" Background="White"/>
-        <TextBox Background="White" Margin="596,390,218,93" Grid.Row="1" />
-        <Label  FontFamily="Roboto" FontSize="23" Margin="495,413,409,74" Grid.Row="1" Content="Cobro" />
+        <materialDesign:PackIcon Kind="SmileyHappy" materialDesign:ColorZoneAssist.Mode="Light" HorizontalAlignment="Right" Height="50" Width="94" Margin="0,0,254,0" Grid.Column="1"/>
+        <Label Foreground="White" FontStyle="Italic" FontFamily="Rubik" HorizontalAlignment="Center" Grid.Row="0" FontSize="30" FontWeight="Bold"  Width="240" Margin="114,10,242,522" Grid.RowSpan="2" Grid.Column="1"  >Vehículos</Label>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Background="#e4e65e" HorizontalAlignment="Left" Width="415" Grid.ColumnSpan="2">
+
+            <TextBox Background="White" Margin="76,40,54,0" materialDesign:HintAssist.Hint="Placa Vehiculo" FontSize="25" FontFamily="Roboto" materialDesign:HintAssist.IsFloating="True" Height="70" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <ComboBox Background="White" Margin="76,40,54,0" Height="70" materialDesign:HintAssist.Hint="Tipo Vehículo" FontFamily="Roboto" FontSize="25" VerticalAlignment="Bottom"/>
+            <Button Background="#80cbc4" BorderBrush="#4f9a94" Height="60"  FontFamily="Roboto" FontSize="23" Content="Ingreso" Margin="76,40,54,0" x:Name="btn_entrada" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Margin="402,2,5,0" Grid.Row="1" Grid.Column="1" Background="#afb42b" Grid.ColumnSpan="3" />
+        <Button  Background="#80cbc4" BorderBrush="#4f9a94" Height="Auto"  FontFamily="Roboto" FontSize="23"   Content="Salida" Margin="118,345,30,156" Name="btn_salida" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <ListBox Name="lbVehiculosAparacados" Grid.Row="1" Margin="424,2,30,230" Background="White" Grid.ColumnSpan="3" Grid.Column="1"/>
+        <Label  FontFamily="Roboto" FontSize="30" FontWeight="Bold" Margin="444,408,335,79" Grid.Row="1" Content="Cobro" Grid.ColumnSpan="2" Grid.Column="1" />
+        <ListBox Name="lbcobro" Grid.Row="1" Margin="442,454,30,12" Background="White" Grid.ColumnSpan="3" Grid.Column="1"/>
+        <Button Background="#80cbc4" BorderBrush="#4f9a94" Name="Btnrefresh" Content="{materialDesign:PackIcon Kind=Refresh,Size=40}" ToolTip="Refrescar Vehículos" Grid.ColumnSpan="2" Margin="424,345,243,156" Grid.Row="1" Height="Auto" Grid.Column="1" />
+        <Button Name="Btnreloj" Style="{DynamicResource MaterialDesignFloatingActionAccentButton }" Content="{materialDesign:PackIcon Kind=Clock, Size= 45 }" Foreground="#fbc02d"  Grid.Column="3" Margin="46,0,5,0" Height="Auto" Width="Auto" Background="Azure"/>
+        <materialDesign:PackIcon Kind="Import" materialDesign:ColorZoneAssist.Mode="Light" Height="75" Width="143" Margin="-34,251,0,0" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Button Name="btnregresar" Style="{DynamicResource MaterialDesignFloatingActionLightButton }" Content="{materialDesign:PackIcon Kind=ArrowLeftBold, Size= 45 }" Foreground="Black" Margin="14,0,557,0" Height="Auto" Width="Auto" Background="#fbc02d" Grid.ColumnSpan="2" Click="Btnregresar_Click"/>
     </Grid>
 </Window>
